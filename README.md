@@ -1,10 +1,14 @@
-This course is being taught at <a href="https://www.uni-bremen.de/en.html">University of Bremen</a> as part the 21st International Summer University for Women in Computing, <a href="https://www.informatica-feminale.de/eng/">Informatica Feminale</a>.
+This course is being taught at [University of Bremen]:https://www.uni-bremen.de/en.html as part the 21st International Summer University for Women in Computing, [Informatica Feminale]:https://www.informatica-feminale.de/eng/.
 
-Instructor: Georgia Olympia Brikis
-Location: University of Bremen, MZH, Room 1460
+Instructor: Georgia Olympia Brikis  
+Location: University of Bremen, MZH, Room 1460  
 Schedule:  
-Monday:    11:00 - 12:30  
-Tuesday:    09:00 - 12:30
+
+| Monday    | 6th Aug  | 11:00 - 12:30 | 14:00 - 16:30 |  
+| Tuesday   | 7th Aug  | 09:00 - 12:30 | 14:00 - 16:30 |  
+| Wednesday | 8th Aug  | 09:00 - 10:30 |               |  
+| Thursday  | 9th Aug  | 09:00 - 12:30 | 14:00 - 16:30 |  
+| Friday    | 10th Aug | 09:00 - 12:30 | 14:00 - 16:30 |  
 
 # Syllabus
 
