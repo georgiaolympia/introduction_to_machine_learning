@@ -2,15 +2,14 @@
 layout: default
 ---
 <br><br><br>
-
-<section class="fdb-block team-2">
+<!--<section class="fdb-block team-2">
   <div class="container alert alert-info">
       <h3 style="margin-top: 0px; font-weight: bold;">Updates</h3>
 
       {% comment %} Do math on unix timstamps to process in liquid {% endcomment %}
       {% assign onemonthago = 'now' | date: '%s' | minus: 2592000 %}
       {% for update in site.updates %}
-        {% if update.categories contains 'winter17' %}
+        {% if update.categories contains 'if18' %}
           {% comment %} No int filter, use benign math to coerce from string {% endcomment %}
           {% assign update_date = update.date | date: '%s' | times: 1 %}
           {% if update_date > onemonthago %}
@@ -18,24 +17,8 @@ layout: default
           {% endif %}
         {% endif %}
       {% endfor %}
-
-      <!--<p><a onclick='$("#old-updates").show(); $(this).hide()'>[+] Show older updates</a></p>-->
-
-      <div id="old-updates" style="display: none">
-
-        {% for update in site.updates %}
-        {% if update.categories contains 'winter17' %}
-        {% comment %} No int filter, use benign math to coerce from string {% endcomment %}
-        {% assign update_date = update.date | date: '%s' | times: 1 %}
-        {% if update_date <= onemonthago %}
-        {{ update.output }}
-        {% endif %}
-        {% endif %}
-        {% endfor %}
-
-      </div><!-- old-updates -->
   </div>
-</section>
+</section>-->
 
 <section class="fdb-block team-2">
   {% assign anchor_text="Course Overview" %}
@@ -44,10 +27,24 @@ layout: default
   {% include anchor.html %}
   <p></p>
   <dl class="dl-horizontal">
-    <dd> <b>Instructor:</b> <a href="https://www.iitk.ac.in/aero/mangal/"> {{site.instructor}} </a></dd>
-    <dd><b>Office Hours:</b> Tuesday, Friday (03:30PM &mdash; 04:30PM)</dd>
-    <dd><b>Class Venue:</b> L-11, Lecture Hall Complex</dd>
-    <dd><b>Class Timings:</b> Monday, Wednesday (5:10PM &mdash; 6:30PM) </dd>
+    <dd> <b>Instructor:</b> {{site.instructor}} </dd>
+    <dd><b>Classroom:</b> {{site.location}}</dd>
+    <dd><b>Class Schedule:</b> 
+      <table class="table"> Monday (5:10PM &mdash; 6:30PM)
+        <tr>
+          <th>Mon, 6th Aug</th>
+          <th>11:00 &mdash; 12:30 <br> 14:00 &mdash; 16:30</th>
+        </tr>
+        <tr>
+          <th>Mon, 6th Aug</th>
+          <th>11:00 &mdash; 12:30 <br> 14:00 &mdash; 16:30</th>
+        </tr>
+        <tr>
+          <th>Mon, 6th Aug</th>
+          <th>11:00 &mdash; 12:30 <br> 14:00 &mdash; 16:30</th>
+        </tr>
+      </table>
+    </dd>
     <dd><b>T.A. Hours:</b> Mayank Mittal (Friday, 4:30PM &mdash; 5:30PM), Krishnraj Singh Gaur (by appointment)</dd>
   </dl>
   <p>{{site.description}}</p>
