@@ -3,6 +3,74 @@ layout: default
 ---
 <br><br><br>
 
+<section class="fdb-block team-2">
+  <div class="container alert alert-info">
+      <h3 style="margin-top: 0px; font-weight: bold;">Updates</h3>
+
+      {% comment %} Do math on unix timstamps to process in liquid {% endcomment %}
+      {% assign onemonthago = 'now' | date: '%s' | minus: 2592000 %}
+      {% for update in site.updates %}
+        {% if update.categories contains 'winter17' %}
+          {% comment %} No int filter, use benign math to coerce from string {% endcomment %}
+          {% assign update_date = update.date | date: '%s' | times: 1 %}
+          {% if update_date > onemonthago %}
+            {{ update.output }}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      <!--<p><a onclick='$("#old-updates").show(); $(this).hide()'>[+] Show older updates</a></p>-->
+
+      <div id="old-updates" style="display: none">
+
+        {% for update in site.updates %}
+        {% if update.categories contains 'winter17' %}
+        {% comment %} No int filter, use benign math to coerce from string {% endcomment %}
+        {% assign update_date = update.date | date: '%s' | times: 1 %}
+        {% if update_date <= onemonthago %}
+        {{ update.output }}
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+
+      </div><!-- old-updates -->
+  </div>
+</section>
+
+<section class="fdb-block team-2">
+  {% assign anchor_text="Course Overview" %}
+  {% assign anchor_name="home" %}
+  {% assign anchor_html_entity="h2" %}
+  {% include anchor.html %}
+  <p></p>
+  <dl class="dl-horizontal">
+    <dd> <b>Instructor:</b> <a href="https://www.iitk.ac.in/aero/mangal/"> {{site.instructor}} </a></dd>
+    <dd><b>Office Hours:</b> Tuesday, Friday (03:30PM &mdash; 04:30PM)</dd>
+    <dd><b>Class Venue:</b> L-11, Lecture Hall Complex</dd>
+    <dd><b>Class Timings:</b> Monday, Wednesday (5:10PM &mdash; 6:30PM) </dd>
+    <dd><b>T.A. Hours:</b> Mayank Mittal (Friday, 4:30PM &mdash; 5:30PM), Krishnraj Singh Gaur (by appointment)</dd>
+  </dl>
+  <p>{{site.description}}</p>
+</section>
+
+<section class="fdb-block team-2">
+  {% assign anchor_text="Course Pre-Requisites" %}
+  {% assign anchor_name="prereqs" %}
+  {% assign anchor_html_entity="h2" %}
+  {% include anchor.html %}
+  <p>There are no formal pre-requisties for the course. However, prior knowledge of dynamics,
+    probability and statistics is necessary. The students also need to be proficient in object-oriented
+    programming (Python/C++), and MATLAB. Familiarity of robotic hardware and ROS would be beneficial.</p>
+  <p><b> NOTE: </b> The course is being offered to advanced undergraduate and graduate students only.</p>
+
+</section>
+
+<section class="fdb-block team-2">
+  {% assign anchor_text="Schedule" %}
+  {% assign anchor_name="schedule" %}
+  {% assign anchor_html_entity="h2" %}
+  {% include anchor.html %}
+
     <div class="alert alert-warning">
       <span class="glyphicon glyphicon-warning-sign"></span>
       The syllabus is subject to change in response to
@@ -21,4 +89,151 @@ layout: default
           {% endif %}
         {% endfor %}
       </table>
+    </div><!-- table-responsive -->
+
+    <!--
+    <p>Some suggestions for special topics lectures:</p>
+    <ul>
+    <li>UKF SLAM</li>
+    <li>Monte- Carlo Based Methods for Localization</li>
+    <li>Deep Learning for Navigation</li>
+    </ul>
+    -->
+</section>
+
+
+<section class="fdb-block team-2">
+  {% assign anchor_text="Grading" %}
+  {% assign anchor_name="grading" %}
+  {% assign anchor_html_entity="h2" %}
+  {% include anchor.html %}
+  <p>
+  This course is graded on a straight scale, it will not be curved. There are a
+  total of 100 possible points in this course.  The tentative break-up of the points is
+  as follows: Homework Assignments (40 points), Project (35 points), Quizzes (5 points)
+  and End-Semester Examination (20 points). Each section has modest opportunity for extra credit
+  that can cover missing points elsewhere.
+  </p>
+
+  <!-- <p><small><em>Range notation [90,93) means 90 is included and 93 is not</em></small></p>
+  {% assign anchor_text="Final Grades" %}
+  {% assign anchor_name="syllabus-grades" %}
+  {% assign anchor_html_entity="h3" %}
+  {% include anchor.html %}
+  <div class="table-responsive">
+  <table class="table grade-table">
+  	<tr>
+  		<th></th>
+  		<th>A*<br /><small>[91,100]</small></th>
+  		<th>A<br /><small>[80,91)</small></th>
+  		<th>B<br /><small>[55,80)</small></th>
+  		<th>C<br /><small>[47,55)</small></th>
+  		<th>D<br /><small>[33,47)</small></th>
+  		<th>E<br /><small>[20,33)</small></th>
+  		<th>F<br /><small>[0,20)</small></th>
+  	</tr>
+  </table>
+  </div> -->
+
+  <br>
+
+  {% assign anchor_text="Homework (40% / 40 points)" %}
+  {% assign anchor_name="syllabus-homework" %}
+  {% assign anchor_html_entity="h3" %}
+  {% include anchor.html %}
+
+  <p>There would be 4 homework assignments in the course. Each homework assignment is
+  worth 10 points, and would comprise of implementation and theory based questions.
+  There might be bonus questions in each assignment carrying extra points.
+  Any points over 40 points are worth half their value.</p>
+
+  <p><b>NOTE: </b></p>
+  <ul>
+    <li> All assignments have to submitted in <i>LaTeX</i> following this <a href="https://www.overleaf.com/latex/templates/ece-100-template/pjrrfybfggqt#.WjvMFnWCzCI">template</a>. </li>
+    <li> Late assignment submissions may lead to penalty.</li>
+  </ul>
+
+  <br>
+
+  {% assign anchor_text="Project (35% / 35 points)" %}
+  {% assign anchor_name="syllabus-project" %}
+  {% assign anchor_html_entity="h3" %}
+  {% include anchor.html %}
+
+  <p>The course heavily emphasizes on the project aspect. You would be required to work in a team
+    of 2-3 members. The project has to be an implementation of a recent work (from 2013 onwards) in robotics appearing in conferences like
+    RSS, ICRA, or IROS. The source code for the same should not be publicly available. Points would be given on the basis of code readibilty, documentation, and presentation.
+  </p>
+
+  <br>
+
+  {% assign anchor_text="Quizzes and Participation (5% / 5 points)" %}
+  {% assign anchor_name="syllabus-attendance" %}
+  {% assign anchor_html_entity="h3" %}
+  {% include anchor.html %}
+
+  <p>Attendance is not compulsory for this course. However, the lectures might include
+    some quizzes used to verify comprehension. These quizzes could be in form of
+    class assignments based on implementation or quick two to three theoretical questions.
+  We reserve the right to experiment with this mechanism a bit throughout the
+  semester.
+  </p>
+
+  <br>
+  {% assign anchor_text="Use of Unfair Means" %}
+  {% assign anchor_name="syllabus-cheating" %}
+  {% assign anchor_html_entity="h3" %}
+  {% include anchor.html %}
+
+  <p>The use of unfair means by any student would be severely punished. The following
+  document would be referred to while deciding the penalty imposed: <a href="/assets/winter17/references/ae640a-general-instructions.pdf"> General Instructions and Guidelines </p>
+
+</section>
+
+<section class="fdb-block team-2">
+  {% assign anchor_text="Course Staff" %}
+  {% assign anchor_name="staff" %}
+  {% assign anchor_html_entity="h2" %}
+  {% include anchor.html %}
+  <p>
+    For general issues, e-mail the course staff at <a href="mailto:{{site.email}}">{{site.email}}</a>.
+    For sensitive issues, please e-mail <a href="mailto:mangal@iitk.ac.in">{{site.instructor}}</a> directly.
+  </p>
+  <br>
+  <div class="container">
+    <div class="row text-center justify-content-center">
+      <div class="col-sm-3 m-sm-auto">
+        <a href="https://www.iitk.ac.in/aero/mangal/">
+          <img class="img-fluid" src="/assets/winter17/staff/mangal-kothari.jpg" alt="Mangal Kothari">
+        </a>
+        <h3><a href="https://www.iitk.ac.in/aero/mangal/">Prof. Mangal Kothari</a></h3>
+        <p><a href="mailto:mangal@iitk.ac.in">mangal@iitk.ac.in</a></p>
+      </div>
+
+      <div class="col-sm-3 m-sm-auto">
+        <a href="https://mayankm96.github.io">
+          <img class="img-fluid" src="/assets/winter17/staff/mayank-mittal.jpg"  alt="Mayank Mittal"/>
+        </a>
+        <h3><a href="https://mayankm96.github.io">Mayank Mittal</a></h3>
+        <p><a href="mailto:mayankm@iitk.ac.in">mayankm@iitk.ac.in</a></p>
+      </div>
+
+      <div class="col-sm-3 m-sm-auto">
+        <a href="">
+          <img class="img-fluid" src="/assets/winter17/staff/krishnraj-singh.jpg"  alt="Krishnraj Singh Gaur"/>
+        </a>
+        <h3><a href="">Krishnraj Singh Gaur</a></h3>
+        <p><a href="mailto:ksgaur@iitk.ac.in">ksgaur@iitk.ac.in</a></p>
+      </div>
     </div>
+  </div>
+</section>
+
+<section class="fdb-block team-2">
+  {% assign anchor_text="References" %}
+  {% assign anchor_name="reference" %}
+  {% assign anchor_html_entity="h2" %}
+  {% include anchor.html %}
+  <p>[1] Probabilistic Robotics. Sebastian Thrun, Wolfram Burgard and Dieter Fox. MIT press, 2005.</p>
+  <p>[2] Principles of Robot Motion: Theory, Algorithms and Implementations, Howie Choset <i>et al.</i>. MIT Press, 2005.
+</section>
