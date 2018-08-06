@@ -1,37 +1,21 @@
-## Welcome to GitHub Pages
+# Introduction to Machine Learning
 
-You can use the [editor on GitHub](https://github.com/georgiaolympia/introduction_to_machine_learning/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+In this repository we share materials related to the course 'Introduction to Machine Learning' at University of Bremen's *Informatica Feminale* summer school.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+https://www.informatica-feminale.de/eng/2018/program/
 
-### Markdown
+## Course Description
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Machine learning is a field of computer science that gives computers the ability to act without being explicitly programmed. It is the science behind countless technological advancements, like self-driving cars, speech recognition, effective web search and a vastly improved understanding of the human genome. Moreover it gives us the tools to approach existing problems in a new way by learning from data and experience.
 
-```markdown
-Syntax highlighted code block
+This course provides a practical introduction to machine learning, data mining and statistical pattern recognition. Based on a real life problem you will learn how methods of supervised and unsupervised machine learning work, gain practice implementing them and getting them to work for yourself. More importantly you will also learn how to leverage machine learning techniques for problems and use cases you might encounter in your own work or field of study.
 
-# Header 1
-## Header 2
-### Header 3
+## Exercises
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+## Quizes
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/georgiaolympia/introduction_to_machine_learning/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Quiz 1
+Quiz 2
+Quiz 3
+Quiz 4
