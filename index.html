@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<br><br><br>
+
+    <div class="alert alert-warning">
+      <span class="glyphicon glyphicon-warning-sign"></span>
+      The syllabus is subject to change in response to
+      feedback and class needs throughout the term.
+    </div>
+    <div class="table-responsive">
+      <table class="table">
+        <tr>
+          <th style="min-width: 190px;" colspan="2">Week</th>
+          <th style="min-width: 450px;">Topic</th>
+          <th style="min-width: 250px;">Summary</th>
+        </tr>
+        {% for week in site.syllabus %}
+          {% if week.categories contains 'winter17' %}
+            {{ week.output }}
+          {% endif %}
+        {% endfor %}
+      </table>
+    </div>
