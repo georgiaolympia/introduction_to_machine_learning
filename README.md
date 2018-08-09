@@ -27,7 +27,7 @@ This class is being taught at [University of Bremen](https://www.uni-bremen.de/e
 
 # Quizes
 
-Quiz 1  
+[Quiz 1](https://play.kahoot.it/#/k/d454b632-c7b2-422f-8a7d-c26dda7c04d5)
 Quiz 2  
 Quiz 3  
 Quiz 4  
